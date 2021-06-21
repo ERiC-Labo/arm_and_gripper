@@ -19,7 +19,7 @@ client.wait_for_server()
 value = rospy.get_param('~value', 0.8)
 # Create a goal to send (to the action server)
 goal = control_msgs.msg.GripperCommandGoal()
-goal.command.position = 0.0195   # Open 0.0      Close 0.0195
+goal.command.position = value   # Open 0.0      Close 0.0195
 goal.command.max_effort = 0.1  # Do not limit the effort
 feedback = control_msgs.msg.GripperCommandFeedback()
 feedback.position
