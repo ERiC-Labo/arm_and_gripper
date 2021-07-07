@@ -4,7 +4,7 @@ import rospy
 import actionlib
 import control_msgs.msg
  
-rospy.init_node('gripper_control')
+rospy.init_node('gripper_control1')
  
 # Create an action client
 client = actionlib.SimpleActionClient(
@@ -16,7 +16,7 @@ client = actionlib.SimpleActionClient(
 # Wait until the action server has been started and is listening for goals
 client.wait_for_server()
 
-value = rospy.get_param('~value', 0.8)
+value = rospy.get_param('~value', 0.0195)
 # Create a goal to send (to the action server)
 goal = control_msgs.msg.GripperCommandGoal()
 goal.command.position = value   # Open 0.0      Close 0.0195
